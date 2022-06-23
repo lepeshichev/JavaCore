@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/OOP/OOP.iml" filepath="$PROJECT_DIR$/OOP/OOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP2/OOP2.iml" filepath="$PROJECT_DIR$/OOP2/OOP2.iml" />
       <module fileurl="file://$PROJECT_DIR$/SimplePractice.iml" filepath="$PROJECT_DIR$/SimplePractice.iml" />
       <module fileurl="file://$PROJECT_DIR$/base-syntax/base-syntax.iml" filepath="$PROJECT_DIR$/base-syntax/base-syntax.iml" />
     </modules>
