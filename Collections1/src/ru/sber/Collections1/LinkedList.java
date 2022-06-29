@@ -5,16 +5,15 @@ import java.util.NoSuchElementException;
 
 public class LinkedList implements Deque, Collection {
 
-    static class Node {
-
-        Object item;
-        Node next;
-        Node prev;
+    public static class Node {
+        public Object item;
+        public Node next;
+        public Node prev;
     }
 
     int len = 0;
 
-    Node start;
+    public Node start;
 
     @Override
     public int size() {
