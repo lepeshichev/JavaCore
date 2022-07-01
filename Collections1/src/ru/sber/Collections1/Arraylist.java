@@ -2,7 +2,7 @@ package ru.sber.Collections1;
 
 import java.util.Iterator;
 
-public class Arraylist implements List {
+public class Arraylist<T> implements List<T> {
     int len = 10;
     Object[] objArray = new Object[len];
 
@@ -23,7 +23,7 @@ public class Arraylist implements List {
     }
 
     @Override
-    public boolean contains(Object item) {
+    public boolean contains(T item) {
         for (Object obj : objArray) {
             if (obj == item)
                 return true;
@@ -32,7 +32,7 @@ public class Arraylist implements List {
     }
 
     @Override
-    public void add(Object item) {
+    public void add(T item) {
         int counter = 0;
         for (Object obj : objArray) {
             if (obj != null) {
@@ -51,7 +51,7 @@ public class Arraylist implements List {
     }
 
     @Override
-    public boolean remove(Object item) {
+    public boolean remove(T item) {
         Object[] newObjArray = new Object[len];
         int temp = 0;
         for (int i = 0; (i + temp) < len; i++) {
@@ -70,7 +70,7 @@ public class Arraylist implements List {
     }
 
     @Override
-    public void add(int index, Object item) {
+    public void add(int index, T item) {
         int counter = 0;
         for (Object obj : objArray) {
             if (obj != null) {
@@ -97,7 +97,7 @@ public class Arraylist implements List {
     }
 
     @Override
-    public void set(int index, Object item) {
+    public void set(int index, T item) {
         objArray[index] = item;
     }
 
@@ -107,7 +107,7 @@ public class Arraylist implements List {
     }
 
     @Override
-    public int indexOf(Object item) {
+    public int indexOf(T item) {
         for (int i = 0; i < len; i++) {
             if (objArray[i] == item)
                 return i;
@@ -116,7 +116,7 @@ public class Arraylist implements List {
     }
 
     @Override
-    public int lastIndexOf(Object item) {
+    public int lastIndexOf(T item) {
         for (int i = len - 1; i > -1; i--) {
             if (objArray[i] == item)
                 return i;
@@ -163,7 +163,7 @@ public class Arraylist implements List {
     }
 
     @Override
-    public Iterator<Object> iterator() {
+    public Iterator<T> iterator() {
         return new Iterator<>() {
             private int currentIndex = 0;
 
@@ -179,8 +179,8 @@ public class Arraylist implements List {
             }
 
             @Override
-            public Object next() {
-                return objArray[currentIndex++];
+            public T next() {
+                return (T) objArray[currentIndex++];
             }
 
         };

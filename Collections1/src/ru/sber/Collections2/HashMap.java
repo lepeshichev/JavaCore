@@ -1,18 +1,17 @@
 package ru.sber.Collections2;
 
-import ru.sber.Collections1.Arraylist;
 import ru.sber.Collections1.LinkedList;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 
-public class HashMap implements Map {
-    static class Pair {
-        Object key;
-        Object value;
+public class HashMap<K, V> implements Map<K, V> {
+    static class Pair<K, V> {
+        K key;
+        V value;
 
-        public Pair(Object key, Object value) {
+        public Pair(K key, V value) {
             this.key = key;
             this.value = value;
         }

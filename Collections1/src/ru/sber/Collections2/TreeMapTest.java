@@ -2,7 +2,7 @@ package ru.sber.Collections2;
 
 public class TreeMapTest {
     public static void main(String[] args) {
-        TreeMap tm = new TreeMap();
+        TreeMap<Integer, String> tm = new TreeMap<>();
         tm.put(8, "23");
         tm.put(3, "23");
         tm.put(10, "23");

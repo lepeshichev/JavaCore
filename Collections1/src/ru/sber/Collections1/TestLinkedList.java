@@ -2,7 +2,7 @@ package ru.sber.Collections1;
 
 public class TestLinkedList {
     public static void main(String[] args) {
-        LinkedList ll = new LinkedList();
+        LinkedList<Integer> ll = new LinkedList<>();
         ll.add(1);
         ll.add(2);
         ll.add(3);

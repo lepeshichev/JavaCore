@@ -1,17 +1,15 @@
 package ru.sber.Collections1;
 
-import java.util.function.Consumer;
-
-public interface Collection extends Iterable {
+public interface Collection<E> extends Iterable<E> {
     int size();
 
     boolean isEmpty();
 
-    boolean contains(Object item);
+    boolean contains(E item);
 
-    void add(Object item);
+    void add(E item);
 
-    boolean remove(Object item);
+    boolean remove(E item);
 
     void clear();
 }

@@ -1,9 +1,9 @@
 package ru.sber.Collections1;
 
-public interface Deque extends Collection {
-    void addFirst(Object item);
-    void addLast(Object item);
-    Object getFirst();
+public interface Deque<E> extends Collection<E> {
+    void addFirst(E item);
+    void addLast(E item);
+    E getFirst();
     Object getLast();
     Object pollFirst();
     Object pollLast();

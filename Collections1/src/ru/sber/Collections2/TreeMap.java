@@ -2,14 +2,14 @@ package ru.sber.Collections2;
 
 import java.util.*;
 
-public class TreeMap implements Map {
-    static class Leaf {
+public class TreeMap<K, V> implements Map<K, V> {
+    class Leaf {
         int key;
-        Object value;
+        V value;
         Leaf left;
         Leaf right;
 
-        public Leaf(int key, Object value, Leaf left, Leaf right) {
+        public Leaf(int key, V value, Leaf left, Leaf right) {
             this.key = key;
             this.value = value;
             this.left = left;
@@ -40,7 +40,7 @@ public class TreeMap implements Map {
     }
 
     @Override
-    public boolean containsKey(Object key) {
+    public boolean containsKey(K key) {
         return containsKey((int) key, root);
     }
 
@@ -57,7 +57,7 @@ public class TreeMap implements Map {
     }
 
     @Override
-    public boolean containsValue(Object value) {
+    public boolean containsValue(V value) {
         Queue<Leaf> q = new LinkedList<>();
         q.add(root);
         while (!q.isEmpty()) {
@@ -73,7 +73,7 @@ public class TreeMap implements Map {
     }
 
     @Override
-    public Object get(Object key) {
+    public Object get(K key) {
         return get((Integer) key, root);
     }
 
@@ -89,12 +89,12 @@ public class TreeMap implements Map {
     }
 
     @Override
-    public Object put(Object key, Object value) {
+    public Object put(K key, V value) {
         root = put((int) key, value, root);
         return value;
     }
 
-    private Leaf put(int key, Object value, Leaf curr) {
+    private Leaf put(int key, V value, Leaf curr) {
         if (curr == null) {
             len++;
             return new Leaf(key, value, null, null);
@@ -108,11 +108,11 @@ public class TreeMap implements Map {
     }
 
     @Override
-    public Object remove(Object key) {
+    //Todo
+    public Object remove(K key) {
         return remove((Integer) key, root);
     }
 
-    //Todo
     private Object remove(int key, Leaf curr) {
         Leaf temp = getLeaf(key, root);
         if (temp.left == null && temp.right == null) {

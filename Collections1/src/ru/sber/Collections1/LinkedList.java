@@ -3,17 +3,17 @@ package ru.sber.Collections1;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class LinkedList implements Deque, Collection {
+public class LinkedList<T> implements Deque<T>, Collection<T> {
 
-    public static class Node {
-        public Object item;
-        public Node next;
-        public Node prev;
+    public static class Node<E> {
+        public E item;
+        public Node<E> next;
+        public Node<E> prev;
     }
 
     int len = 0;
 
-    public Node start;
+    public Node<T> start;
 
     @Override
     public int size() {
@@ -27,7 +27,7 @@ public class LinkedList implements Deque, Collection {
 
     @Override
     public boolean contains(Object item) {
-        Node it = start;
+        Node<T> it = start;
         while (it.next != null) {
             if (it.item == item)
                 return true;
@@ -37,18 +37,18 @@ public class LinkedList implements Deque, Collection {
     }
 
     @Override
-    public void add(Object item) {
+    public void add(T item) {
         if (len == 0) {
-            start = new Node();
+            start = new Node<>();
             start.item = item;
             start.prev = null;
             start.next = null;
         } else {
-            Node it = start;
+            Node<T> it = start;
             while (it.next != null) {
                 it = it.next;
             }
-            Node newNode = new Node();
+            Node<T> newNode = new Node<>();
             newNode.item = item;
             newNode.prev = it;
             it.next = newNode;
@@ -57,9 +57,9 @@ public class LinkedList implements Deque, Collection {
     }
 
     @Override
-    public boolean remove(Object item) {
+    public boolean remove(T item) {
         int counter = 0;
-        Node it = start;
+        Node<T> it = start;
         while (it.next != null) {
             if (it.item == item) {
                 it.prev.next = it.next;
@@ -83,14 +83,14 @@ public class LinkedList implements Deque, Collection {
     }
 
     @Override
-    public void addFirst(Object item) {
+    public void addFirst(T item) {
         if (len == 0) {
-            start = new Node();
+            start = new Node<>();
             start.item = item;
             len++;
             return;
         }
-        Node first = new Node();
+        Node<T> first = new Node<>();
         first.item = item;
         first.next = start;
         start.prev = first;
@@ -99,18 +99,18 @@ public class LinkedList implements Deque, Collection {
     }
 
     @Override
-    public void addLast(Object item) {
+    public void addLast(T item) {
         if (len == 0) {
-            start = new Node();
+            start = new Node<>();
             start.item = item;
             start.prev = null;
             start.next = null;
         } else {
-            Node it = start;
+            Node<T> it = start;
             while (it.next != null) {
                 it = it.next;
             }
-            Node newNode = new Node();
+            Node<T> newNode = new Node<>();
             newNode.item = item;
             newNode.prev = it;
             it.next = newNode;
@@ -119,13 +119,13 @@ public class LinkedList implements Deque, Collection {
     }
 
     @Override
-    public Object getFirst() {
-        return start.item;
+    public T getFirst() {
+        return (T) start.item;
     }
 
     @Override
-    public Object getLast() {
-        Node it = start;
+    public T getLast() {
+        Node<T> it = start;
         while (it.next != null) {
             it = it.next;
         }
@@ -133,20 +133,20 @@ public class LinkedList implements Deque, Collection {
     }
 
     @Override
-    public Object pollFirst() {
+    public T pollFirst() {
         if (len == 0)
             return null;
-        Object temp = start.item;
+        T temp = start.item;
         start = start.next;
         len--;
         return temp;
     }
 
     @Override
-    public Object pollLast() {
+    public T pollLast() {
         if (len == 0)
             return null;
-        Node it = start;
+        Node<T> it = start;
         while (it.next != null) {
             it = it.next;
         }
@@ -156,10 +156,10 @@ public class LinkedList implements Deque, Collection {
     }
 
     @Override
-    public Object removeFirst() {
+    public T removeFirst() {
         if (len == 0)
             throw new NoSuchElementException("Нет такого элемента");
-        Object temp = start.item;
+        T temp = start.item;
         start = start.next;
         len--;
         return temp;
@@ -169,7 +169,7 @@ public class LinkedList implements Deque, Collection {
     public Object removeLast() {
         if (len == 0)
             throw new NoSuchElementException("Нет такого элемента");
-        Node it = start;
+        Node<T> it = start;
         while (it.next != null) {
             it = it.next;
         }
@@ -183,7 +183,7 @@ public class LinkedList implements Deque, Collection {
             System.out.println("LinkedList is empty");
             return;
         }
-        Node it = start;
+        Node<T> it = start;
         while (it.next != null) {
             System.out.print(it.item + " ");
             it = it.next;
@@ -192,7 +192,7 @@ public class LinkedList implements Deque, Collection {
     }
 
     @Override
-    public Iterator<Object> iterator() {
+    public Iterator<T> iterator() {
         return new Iterator<>() {
             int currentIndex = 0;
 
@@ -202,14 +202,14 @@ public class LinkedList implements Deque, Collection {
             }
 
             @Override
-            public Object next() {
-                Node current = start;
+            public T next() {
+                Node<T> current = start;
                 currentIndex++;
                 while (currentIndex > 0) {
                     current = current.next;
                     currentIndex--;
                 }
-                return current.item;
+                return (T) current.item;
             }
         };
     }
