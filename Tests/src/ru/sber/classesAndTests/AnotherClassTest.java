@@ -1,4 +1,4 @@
-package ru.sber.ClassesAndTests;
+package ru.sber.classesAndTests;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -42,6 +42,8 @@ public class AnotherClassTest {
     @Test // Task 1
     public void testPrint2x2() {
         AnotherClass ac = mock(AnotherClass.class);
+        SomeClass sc = spy(new SomeClass());
+        when(sc.doSmth()).thenReturn(3);
         when(ac.print2x2()).thenReturn(4);
         assertEquals(4, ac.print2x2());
     }
@@ -60,9 +62,9 @@ public class AnotherClassTest {
         ac.throwExeption(null);
     }
 
-    String key = "asdasd";
     @Test // task 4
     public void testPrivateMethod() {
+        String key = "asdasd";
         AnotherClass ac = PowerMockito.mock(AnotherClass.class);
         try {
             PowerMockito.when(ac, "privateMethod").thenReturn(key);
