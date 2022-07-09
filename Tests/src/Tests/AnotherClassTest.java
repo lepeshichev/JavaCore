@@ -1,4 +1,4 @@
-package ru.sber.classesAndTests;
+package Tests;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -6,6 +6,8 @@ import org.mockito.Mockito;
 import org.mockito.invocation.Invocation;
 import org.powermock.api.mockito.PowerMockito;
 import org.powermock.reflect.Whitebox;
+import ru.sber.classesAndTests.AnotherClass;
+import ru.sber.classesAndTests.SomeClass;
 
 import java.util.Collection;
 import java.util.NoSuchElementException;
@@ -41,11 +43,8 @@ public class AnotherClassTest {
 
     @Test // Task 1
     public void testPrint2x2() {
-        AnotherClass ac = mock(AnotherClass.class);
-        SomeClass sc = spy(new SomeClass());
+        SomeClass sc =  mock(SomeClass.class);
         when(sc.doSmth()).thenReturn(3);
-        when(ac.print2x2()).thenReturn(4);
-        assertEquals(4, ac.print2x2());
     }
 
     @Test // task 2
