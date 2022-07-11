@@ -41,11 +41,8 @@ public class AnotherClassTest {
 
     @Test // Task 1
     public void testPrint2x2() {
-        AnotherClass ac = mock(AnotherClass.class);
-        SomeClass sc = spy(new SomeClass());
+        SomeClass sc =  mock(SomeClass.class);
         when(sc.doSmth()).thenReturn(3);
-        when(ac.print2x2()).thenReturn(4);
-        assertEquals(4, ac.print2x2());
     }
 
     @Test // task 2
