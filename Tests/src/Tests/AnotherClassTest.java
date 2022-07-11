@@ -1,4 +1,4 @@
-package ru.sber.ClassesAndTests;
+package Tests;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -6,6 +6,8 @@ import org.mockito.Mockito;
 import org.mockito.invocation.Invocation;
 import org.powermock.api.mockito.PowerMockito;
 import org.powermock.reflect.Whitebox;
+import ru.sber.classesAndTests.AnotherClass;
+import ru.sber.classesAndTests.SomeClass;
 
 import java.util.Collection;
 import java.util.NoSuchElementException;
@@ -41,9 +43,8 @@ public class AnotherClassTest {
 
     @Test // Task 1
     public void testPrint2x2() {
-        AnotherClass ac = mock(AnotherClass.class);
-        when(ac.print2x2()).thenReturn(4);
-        assertEquals(4, ac.print2x2());
+        SomeClass sc =  mock(SomeClass.class);
+        when(sc.doSmth()).thenReturn(3);
     }
 
     @Test // task 2
@@ -60,9 +61,9 @@ public class AnotherClassTest {
         ac.throwExeption(null);
     }
 
-    String key = "asdasd";
     @Test // task 4
     public void testPrivateMethod() {
+        String key = "asdasd";
         AnotherClass ac = PowerMockito.mock(AnotherClass.class);
         try {
             PowerMockito.when(ac, "privateMethod").thenReturn(key);
