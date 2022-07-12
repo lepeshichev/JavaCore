@@ -8,9 +8,9 @@
       <module fileurl="file://$PROJECT_DIR$/Lambdas/Lambdas.iml" filepath="$PROJECT_DIR$/Lambdas/Lambdas.iml" />
       <module fileurl="file://$PROJECT_DIR$/OOP/OOP.iml" filepath="$PROJECT_DIR$/OOP/OOP.iml" />
       <module fileurl="file://$PROJECT_DIR$/OOP2/OOP2.iml" filepath="$PROJECT_DIR$/OOP2/OOP2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Reflection/Reflection.iml" filepath="$PROJECT_DIR$/Reflection/Reflection.iml" />
       <module fileurl="file://$PROJECT_DIR$/SimplePractice.iml" filepath="$PROJECT_DIR$/SimplePractice.iml" />
       <module fileurl="file://$PROJECT_DIR$/Streams/Streams.iml" filepath="$PROJECT_DIR$/Streams/Streams.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Tests/Tests.iml" filepath="$PROJECT_DIR$/Tests/Tests.iml" />
       <module fileurl="file://$PROJECT_DIR$/base-syntax/base-syntax.iml" filepath="$PROJECT_DIR$/base-syntax/base-syntax.iml" />
     </modules>
   </component>
