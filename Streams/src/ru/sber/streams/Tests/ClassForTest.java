@@ -1,5 +1,3 @@
-package ru.sber.streams.Tests;
-
 import org.junit.Test;
 import ru.sber.streams.Streams;
 
