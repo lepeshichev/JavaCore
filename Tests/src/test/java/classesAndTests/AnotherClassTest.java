@@ -1,4 +1,4 @@
-package test;
+package classesAndTests;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -6,8 +6,6 @@ import org.mockito.Mockito;
 import org.mockito.invocation.Invocation;
 import org.powermock.api.mockito.PowerMockito;
 import org.powermock.reflect.Whitebox;
-import ru.sber.classesAndTests.AnotherClass;
-import ru.sber.classesAndTests.SomeClass;
 
 import java.util.Collection;
 import java.util.NoSuchElementException;
