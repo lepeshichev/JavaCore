@@ -1,4 +1,4 @@
-package ru.sber.classesAndTests;
+package classesAndTests;
 
 import java.util.NoSuchElementException;
 
